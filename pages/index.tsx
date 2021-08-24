@@ -1,7 +1,8 @@
 import React from "react";
+import { Dashboard } from "../src/pages/Dashboard";
 
 const index = () => {
-  return <div>olá mundo</div>;
+  return <Dashboard />;
 };
 
 export default index;
