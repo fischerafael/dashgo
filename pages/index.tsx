@@ -1,8 +1,9 @@
-import React from "react";
-import { Dashboard } from "../src/pages/Dashboard";
+import React from 'react'
+
+import { Login } from '../src/pages/Login'
 
 const index = () => {
-  return <Dashboard />;
-};
+    return <Login />
+}
 
-export default index;
+export default index
