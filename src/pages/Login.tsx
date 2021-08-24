@@ -1,11 +1,6 @@
-import {
-    Flex,
-    Input,
-    Button,
-    Stack,
-    FormLabel,
-    FormControl
-} from '@chakra-ui/react'
+import { Flex, Stack } from '@chakra-ui/react'
+import { Button } from '../components/atoms/Button'
+import { Input } from '../components/atoms/Input'
 
 export const Login = () => {
     return (
@@ -20,42 +15,11 @@ export const Login = () => {
                 flexDir="column"
             >
                 <Stack spacing="4">
-                    <FormControl>
-                        <FormLabel htmlFor="email">Email</FormLabel>
-                        <Input
-                            name="email"
-                            type="email"
-                            id="email"
-                            focusBorderColor="purple.500"
-                            bg="gray.900"
-                            variant="filled"
-                            _hover={{
-                                background: 'gray.900'
-                            }}
-                            size="lg"
-                        />
-                    </FormControl>
-
-                    <FormControl>
-                        <FormLabel htmlFor="password">Senha</FormLabel>
-                        <Input
-                            name="password"
-                            type="password"
-                            id="password"
-                            focusBorderColor="purple.500"
-                            bg="gray.900"
-                            variant="filled"
-                            _hover={{
-                                background: 'gray.900'
-                            }}
-                            size="lg"
-                        />
-                    </FormControl>
+                    <Input name="email" label="Email" />
+                    <Input name="password" label="Password" />
                 </Stack>
 
-                <Button type="submit" mt="4" colorScheme="purple" size="lg">
-                    Entrar
-                </Button>
+                <Button>Log In</Button>
             </Flex>
         </Flex>
     )
