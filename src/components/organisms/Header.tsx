@@ -4,9 +4,13 @@ import {
     InputGroup,
     InputRightAddon,
     Text,
-    Icon
+    Icon,
+    HStack,
+    Box,
+    Avatar
 } from '@chakra-ui/react'
-import { HiOutlineSearch } from 'react-icons/hi'
+import { HiOutlineBell, HiOutlineLogout, HiOutlineSearch } from 'react-icons/hi'
+import { FaGithub } from 'react-icons/fa'
 
 export const Header = () => {
     return (
@@ -18,7 +22,7 @@ export const Header = () => {
                     w="64"
                     letterSpacing="tight"
                 >
-                    dashgo
+                    dashgit
                     <Text as="span" ml="1" fontSize="3xl" color="blue.500">
                         .
                     </Text>
@@ -46,20 +50,34 @@ export const Header = () => {
                     </InputRightAddon>
                 </InputGroup>
 
-                {/* <Flex
-                    as="label"
-                    flex="1"
-                    px="8"
-                    py="2"
-                    ml="6"
-                    maxWidth={400}
-                    color="gray.200"
-                    position="relative"
-                    bg="gray.800"
-                    borderRadius="full"
-                >
-                    hi
-                </Flex> */}
+                <Flex flex="1" ml="4" justify="flex-end" w="full">
+                    <HStack
+                        spacing="4"
+                        color="gray.400"
+                        borderRightWidth={1}
+                        pr="4"
+                        borderColor="gray.800"
+                    >
+                        <Icon as={HiOutlineBell} fontSize="24" />
+                        <Icon as={HiOutlineLogout} fontSize="24" />
+                    </HStack>
+
+                    <Flex pl="4" align="center">
+                        <Box pr="6">
+                            <Text>Rafael Fischer</Text>
+                            <Text color="gray.400" fontSize="small">
+                                <Icon as={FaGithub} mr="2" />
+                                fischerafael
+                            </Text>
+                        </Box>
+
+                        <Avatar
+                            size="md"
+                            name="Rafael Fischer"
+                            src="https://github.com/fischerafael.png"
+                        />
+                    </Flex>
+                </Flex>
             </Flex>
         </Flex>
     )
