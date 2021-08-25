@@ -17,7 +17,6 @@ export const Input = ({ name, label, ...props }: Props) => {
 
             <ChakraInput
                 name={name}
-                type={name}
                 id={name}
                 focusBorderColor="blue.500"
                 bg="gray.900"
