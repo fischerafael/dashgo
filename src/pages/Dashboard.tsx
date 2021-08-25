@@ -1,3 +1,9 @@
+import { Header } from '../components/organisms/Header'
+
 export const Dashboard = () => {
-  return <div>dashboard</div>;
-};
+    return (
+        <>
+            <Header />
+        </>
+    )
+}
