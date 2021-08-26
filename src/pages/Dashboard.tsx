@@ -1,5 +1,6 @@
 import { Box, VStack } from '@chakra-ui/react'
 import { Header } from '../components/organisms/Header'
+import { Main } from '../components/organisms/Main'
 import { Sidebar } from '../components/organisms/Sidebar'
 import { TemplateApp } from '../components/templates/TemplateApp'
 
@@ -8,7 +9,7 @@ export const Dashboard = () => {
         <TemplateApp
             header={<Header />}
             sidebar={<Sidebar />}
-            main={<h1>oi</h1>}
+            main={<Main />}
         />
     )
 }

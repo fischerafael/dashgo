@@ -64,8 +64,8 @@ export const Header = () => {
 
                     <Flex pl="4" align="center">
                         <Box pr="6">
-                            <Text>Rafael Fischer</Text>
-                            <Text color="gray.400" fontSize="small">
+                            <Text fontSize="sm">Rafael Fischer</Text>
+                            <Text color="gray.400" fontSize="xs">
                                 <Icon as={FaGithub} mr="2" />
                                 fischerafael
                             </Text>
