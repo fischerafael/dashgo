@@ -14,8 +14,8 @@ import { FaGithub } from 'react-icons/fa'
 
 export const Header = () => {
     return (
-        <Flex as="header" w="full" h="20" justify="center" px="6">
-            <Flex maxWidth={1440} w="full" align="center" h="full">
+        <Flex as="header" w="full" h="20" justify="center">
+            <Flex maxWidth={1024} w="full" align="center" h="full">
                 <Text
                     fontSize="2xl"
                     fontWeight="bold"
