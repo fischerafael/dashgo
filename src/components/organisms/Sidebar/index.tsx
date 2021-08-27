@@ -1,10 +1,10 @@
-import { Box, Icon, Link, Text, VStack } from '@chakra-ui/react'
+import { Box, VStack } from '@chakra-ui/react'
 import {
-    HiOutlineRefresh,
     HiOutlineTrendingUp,
     HiOutlineUserAdd,
     HiOutlineUserGroup
 } from 'react-icons/hi'
+import { NavLink } from './components/NavLink'
 import { Section } from './components/Sections'
 
 export const Sidebar = () => {
@@ -15,18 +15,8 @@ export const Sidebar = () => {
                     title="USERS"
                     links={
                         <>
-                            <Link display="flex" w="full" color="gray.400">
-                                <Icon as={HiOutlineUserAdd} fontSize="20" />
-                                <Text ml="4" fontWeight="medium">
-                                    New User
-                                </Text>
-                            </Link>
-                            <Link display="flex" w="full" color="gray.400">
-                                <Icon as={HiOutlineUserGroup} fontSize="20" />
-                                <Text ml="4" fontWeight="medium">
-                                    Users
-                                </Text>
-                            </Link>
+                            <NavLink icon={HiOutlineUserAdd} label="New User" />
+                            <NavLink icon={HiOutlineUserGroup} label="Users" />
                         </>
                     }
                 />
@@ -34,12 +24,10 @@ export const Sidebar = () => {
                     title="STATS"
                     links={
                         <>
-                            <Link display="flex" w="full" color="gray.400">
-                                <Icon as={HiOutlineTrendingUp} fontSize="20" />
-                                <Text ml="4" fontWeight="medium">
-                                    Subscriptions
-                                </Text>
-                            </Link>
+                            <NavLink
+                                icon={HiOutlineTrendingUp}
+                                label="Subscriptions"
+                            />
                         </>
                     }
                 />
