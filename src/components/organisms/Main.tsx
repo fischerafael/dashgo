@@ -3,39 +3,6 @@ const Chart = dynamic(() => import('react-apexcharts'), { ssr: false }) //dynami
 
 import { Box, SimpleGrid, Text, theme } from '@chakra-ui/react'
 
-const options = {
-    chart: {
-        toolbar: {
-            show: false
-        },
-        zoom: {
-            enabled: false
-        },
-        foreColor: theme.colors.gray[700]
-    },
-    grid: { show: false },
-    dataLabels: { enabled: false },
-    tooltip: { enabled: false },
-    xaxis: {
-        type: 'datetime',
-        axisBorder: {
-            color: theme.colors[700]
-        },
-        axisTicks: {
-            color: theme.colors[700]
-        },
-        categories: [
-            '2021-08-10T00:00:000Z',
-            '2021-08-11T00:00:000Z',
-            '2021-08-12T00:00:000Z',
-            '2021-08-13T00:00:000Z',
-            '2021-08-14T00:00:000Z',
-            '2021-08-15T00:00:000Z',
-            '2021-08-16T00:00:000Z'
-        ]
-    }
-}
-
 const series = [
     {
         name: 'series1',
@@ -57,7 +24,34 @@ export const Main = () => {
                     Last Day
                 </Text>
                 <Chart
-                    options={options}
+                    options={{
+                        xaxis: {
+                            type: 'datetime',
+                            axisBorder: { color: theme.colors.blue[700] },
+                            axisTicks: { color: theme.colors.blue[700] },
+                            categories: [
+                                '2021-08-10T00:00:000Z',
+                                '2021-08-11T00:00:000Z',
+                                '2021-08-12T00:00:000Z',
+                                '2021-08-13T00:00:000Z',
+                                '2021-08-14T00:00:000Z',
+                                '2021-08-15T00:00:000Z',
+                                '2021-08-16T00:00:000Z'
+                            ]
+                        },
+                        chart: {
+                            toolbar: {
+                                show: false
+                            },
+                            zoom: {
+                                enabled: false
+                            },
+                            foreColor: theme.colors.gray[700]
+                        },
+                        grid: { show: false },
+                        dataLabels: { enabled: false },
+                        tooltip: { enabled: false }
+                    }}
                     series={series}
                     type="area"
                     height={160}
@@ -68,7 +62,34 @@ export const Main = () => {
                     Last Week
                 </Text>
                 <Chart
-                    options={options}
+                    options={{
+                        xaxis: {
+                            type: 'datetime',
+                            axisBorder: { color: theme.colors.blue[700] },
+                            axisTicks: { color: theme.colors.blue[700] },
+                            categories: [
+                                '2021-08-10T00:00:000Z',
+                                '2021-08-11T00:00:000Z',
+                                '2021-08-12T00:00:000Z',
+                                '2021-08-13T00:00:000Z',
+                                '2021-08-14T00:00:000Z',
+                                '2021-08-15T00:00:000Z',
+                                '2021-08-16T00:00:000Z'
+                            ]
+                        },
+                        chart: {
+                            toolbar: {
+                                show: false
+                            },
+                            zoom: {
+                                enabled: false
+                            },
+                            foreColor: theme.colors.gray[700]
+                        },
+                        grid: { show: false },
+                        dataLabels: { enabled: false },
+                        tooltip: { enabled: false }
+                    }}
                     series={series}
                     type="area"
                     height={160}
