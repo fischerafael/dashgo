@@ -38,7 +38,16 @@ export const Chart = () => {
                 },
                 grid: { show: false },
                 dataLabels: { enabled: false },
-                tooltip: { enabled: false }
+                tooltip: { enabled: false },
+                fill: {
+                    opacity: 0.3,
+                    type: 'gradient',
+                    gradient: {
+                        shade: 'dark',
+                        opacityFrom: 0.7,
+                        opacityTo: 0.3
+                    }
+                }
             }}
             series={series}
             type="area"
