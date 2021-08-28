@@ -1,3 +1,4 @@
+import NextLink from 'next/link'
 import { Icon, Link, Text, LinkProps } from '@chakra-ui/react'
 import { ElementType } from 'react'
 

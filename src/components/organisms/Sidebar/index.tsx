@@ -1,8 +1,8 @@
 import { Box, VStack } from '@chakra-ui/react'
 import {
-    HiOutlineTrendingUp,
-    HiOutlineUserAdd,
-    HiOutlineUserGroup
+    HiOutlineCalendar,
+    HiOutlineCash,
+    HiOutlineTrendingUp
 } from 'react-icons/hi'
 import { NavLink } from './components/NavLink'
 import { Section } from './components/Sections'
@@ -12,11 +12,19 @@ export const Sidebar = () => {
         <Box as="aside" w="64" py="8">
             <VStack spacing="4" align="flex-start">
                 <Section
-                    title="USERS"
+                    title="WORK"
                     links={
                         <>
-                            <NavLink icon={HiOutlineUserAdd} label="New User" />
-                            <NavLink icon={HiOutlineUserGroup} label="Users" />
+                            <NavLink
+                                href="/app/workingdays"
+                                icon={HiOutlineCalendar}
+                                label="Working Days"
+                            />
+                            <NavLink
+                                href="/app/inovices"
+                                icon={HiOutlineCash}
+                                label="Invoices"
+                            />
                         </>
                     }
                 />
@@ -26,7 +34,8 @@ export const Sidebar = () => {
                         <>
                             <NavLink
                                 icon={HiOutlineTrendingUp}
-                                label="Subscriptions"
+                                label="Statistics"
+                                href="/app/stats"
                             />
                         </>
                     }

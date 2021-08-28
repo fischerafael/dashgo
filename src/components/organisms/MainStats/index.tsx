@@ -1,7 +1,7 @@
 import { Box, SimpleGrid, Text } from '@chakra-ui/react'
-import { Chart } from '../molecules/Charts/DailyChart'
+import { Chart } from '../../molecules/Charts/DailyChart'
 
-export const Main = () => {
+export const MainStats = () => {
     return (
         <SimpleGrid
             py="8"

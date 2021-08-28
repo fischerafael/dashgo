@@ -1,14 +1,14 @@
 import { Header } from '../components/organisms/Header'
-import { MainStats } from '../components/organisms/MainStats'
+import { MainWorkingDays } from '../components/organisms/MainWorkingDays'
 import { Sidebar } from '../components/organisms/Sidebar'
 import { TemplateApp } from '../components/templates/TemplateApp'
 
-export const Dashboard = () => {
+export const WorkingDays = () => {
     return (
         <TemplateApp
             header={<Header />}
             sidebar={<Sidebar />}
-            main={<MainStats />}
+            main={<MainWorkingDays />}
         />
     )
 }
