@@ -3,6 +3,7 @@ import {
     Button,
     Checkbox,
     Flex,
+    HStack,
     Icon,
     Table,
     Tbody,
@@ -94,6 +95,51 @@ export const MainWorkingDays = () => {
                     </Tr>
                 </Tbody>
             </Table>
+
+            <HStack
+                spacing="2"
+                h="20"
+                align="center"
+                justify="space-between"
+                w="full"
+                p="6"
+            >
+                <HStack>
+                    <Text color="gray.500" fontWeight="bold">
+                        0 - 10
+                    </Text>
+                    <Text color="gray.700">of 103</Text>
+                </HStack>
+                <HStack>
+                    <Button
+                        as="a"
+                        size="sm"
+                        fontSize="sm"
+                        bg="blue.400"
+                        cursor="pointer"
+                    >
+                        01
+                    </Button>
+                    <Button
+                        as="a"
+                        bg="blue.900"
+                        size="sm"
+                        fontSize="sm"
+                        cursor="pointer"
+                    >
+                        02
+                    </Button>
+                    <Button
+                        as="a"
+                        bg="blue.900"
+                        size="sm"
+                        fontSize="sm"
+                        cursor="pointer"
+                    >
+                        03
+                    </Button>
+                </HStack>
+            </HStack>
         </VStack>
     )
 }
