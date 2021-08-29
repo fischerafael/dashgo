@@ -5,13 +5,15 @@ import {
     Flex,
     Icon,
     Table,
+    Tbody,
+    Td,
     Text,
     Th,
     Thead,
     Tr,
     VStack
 } from '@chakra-ui/react'
-import { HiOutlinePlus } from 'react-icons/hi'
+import { HiOutlinePlus, HiOutlineSearch } from 'react-icons/hi'
 
 export const MainWorkingDays = () => {
     return (
@@ -33,16 +35,64 @@ export const MainWorkingDays = () => {
                 </Button>
             </Flex>
 
-            <Table colorScheme="whiteAlpha">
+            <Table colorScheme="whiteAlpha" size="md">
                 <Thead>
                     <Tr>
-                        <Th px="6" color="gray.300" width="8">
-                            <Checkbox colorScheme="blue" />
+                        <Th>
+                            <Text fontSize="xs">Date</Text>
                         </Th>
-                        <Th>Day</Th>
-                        <Th>Worked Hours</Th>
+                        <Th>
+                            <Text fontSize="xs">Started at</Text>
+                        </Th>
+                        <Th>
+                            <Text fontSize="xs">Ended at</Text>
+                        </Th>
+                        <Th>
+                            <Text fontSize="xs">Lunch</Text>
+                        </Th>
+                        <Th>
+                            <Text fontSize="xs">Hours</Text>
+                        </Th>
+                        <Th>
+                            <Text fontSize="xs"></Text>
+                        </Th>
                     </Tr>
                 </Thead>
+
+                <Tbody>
+                    <Tr _hover={{ bg: 'gray.900' }}>
+                        <Td>
+                            <Text fontSize="sm">29/08/2021</Text>
+                        </Td>
+                        <Td>
+                            <Text fontSize="sm">10:00 am</Text>
+                        </Td>
+                        <Td>
+                            <Text fontSize="sm">19:00 pm</Text>
+                        </Td>
+                        <Td>
+                            <Text fontSize="sm">1</Text>
+                        </Td>
+                        <Td>
+                            <Text fontSize="sm">8</Text>
+                        </Td>
+                        <Td>
+                            <Flex justify="flex-end">
+                                <Button
+                                    as="a"
+                                    size="sm"
+                                    fontSize="sm"
+                                    colorScheme="blue"
+                                    cursor="pointer"
+                                    variant="outline"
+                                    leftIcon={<Icon as={HiOutlineSearch} />}
+                                >
+                                    View
+                                </Button>
+                            </Flex>
+                        </Td>
+                    </Tr>
+                </Tbody>
             </Table>
         </VStack>
     )
