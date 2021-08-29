@@ -12,7 +12,7 @@ export const TemplateApp = ({ header, sidebar, main }: Props) => {
         <Flex direction="column" h="100vh" align="center" px="2">
             {header}
 
-            <Flex maxWidth={1024} w="100%" h="full">
+            <Flex maxWidth={1024} w="100%">
                 {sidebar}
                 {main}
             </Flex>

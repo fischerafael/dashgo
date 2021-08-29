@@ -12,7 +12,10 @@ interface NavLinkProps extends LinkProps {
 export const NavLink = ({ icon, href, label, ...props }: NavLinkProps) => {
     const { asPath } = useRouter()
 
-    const isActive = asPath === href
+    const hrefPathSplit = href.split('/')[2]
+    const asPathSplit = asPath.split('/')[2]
+
+    const isActive = hrefPathSplit === asPathSplit
 
     return (
         <Link as={NextLink} href={href} {...props}>
