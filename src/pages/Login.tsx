@@ -1,6 +1,5 @@
-import { Flex, Stack } from '@chakra-ui/react'
+import { Flex } from '@chakra-ui/react'
 import { Button } from '../components/atoms/Button'
-import { Input } from '../components/atoms/Input'
 
 export const Login = () => {
     return (
@@ -14,12 +13,7 @@ export const Login = () => {
                 borderRadius="4"
                 flexDir="column"
             >
-                <Stack spacing="4">
-                    <Input name="email" label="Email" />
-                    <Input name="password" label="Password" />
-                </Stack>
-
-                <Button>Log In</Button>
+                <Button>Sign In with Google</Button>
             </Flex>
         </Flex>
     )
