@@ -16,12 +16,12 @@ export const Sidebar = () => {
                     links={
                         <>
                             <NavLink
-                                href="/app/workingdays"
+                                href="/app/working-days"
                                 icon={HiOutlineCalendar}
                                 label="Working Days"
                             />
                             <NavLink
-                                href="/app/inovices"
+                                href="/app/invoices"
                                 icon={HiOutlineCash}
                                 label="Invoices"
                             />
