@@ -3,7 +3,7 @@ import { HiOutlineSearch } from 'react-icons/hi'
 
 export const Search = () => {
     return (
-        <InputGroup w="full" display={['none', 'none', 'flex']}>
+        <InputGroup w="full">
             <Input
                 id="search"
                 borderRadius="full"
