@@ -1,20 +1,25 @@
 import { Flex } from '@chakra-ui/react'
+import { FormEvent } from 'react'
 import { Button } from '../components/atoms/Button'
+import { useAuth } from '../hooks/useAuth'
 
 export const Login = () => {
+    const { isLoading, signInWithGoogle } = useAuth()
+
+    const onClick = async (e: FormEvent) => {
+        e.preventDefault
+        await signInWithGoogle()
+    }
+
     return (
         <Flex w="100vw" h="100vh" align="center" justify="center">
-            <Flex
-                as="form"
-                width="100%"
-                maxWidth={360}
-                bg="gray.800"
-                p="8"
-                borderRadius="4"
-                flexDir="column"
+            <Button
+                disabled={isLoading ? true : false}
+                type="button"
+                onClick={onClick}
             >
-                <Button>Sign In with Google</Button>
-            </Flex>
+                Sign In With Google
+            </Button>
         </Flex>
     )
 }

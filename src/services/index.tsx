@@ -1,4 +1,4 @@
-import firebase, { initializeApp } from 'firebase/app'
+import firebase from 'firebase/app'
 
 import 'firebase/auth'
 import 'firebase/database'
@@ -12,13 +12,11 @@ const firebaseConfig = {
     appId: process.env.NEXT_PUBLIC_APP_ID
 }
 
-// if (!firebase.apps.length) {
-//     firebase.initializeApp(firebaseConfig)
-// }
-export const app = initializeApp(firebaseConfig)
-// firebase.initializeApp(firebaseConfig)
+if (!firebase.apps.length) {
+    firebase.initializeApp(firebaseConfig)
+}
 
-// const auth = firebase.auth()
-// const database = firebase.database()
+const auth = firebase.auth()
+const database = firebase.database()
 
-// export { auth, database, firebase }
+export { auth, database, firebase }

@@ -1,7 +1,12 @@
-import { Avatar, Box, Flex, Icon, Text } from '@chakra-ui/react'
-import { FaGithub } from 'react-icons/fa'
+import { Avatar, Box, Flex, Text } from '@chakra-ui/react'
 
-export const Profile = () => {
+import { IUser } from '../../../../entities/IUser'
+
+interface Props {
+    user: IUser
+}
+
+export const Profile = ({ user }: Props) => {
     return (
         <Flex
             spacing="4"
@@ -11,17 +16,9 @@ export const Profile = () => {
             borderColor="gray.800"
             align="center"
         >
-            <Avatar
-                size="md"
-                name="Rafael Fischer"
-                src="https://github.com/fischerafael.png"
-            />
+            <Avatar size="sm" name={user.name} src={user.avatar} />
             <Box pl="4">
-                <Text fontSize="sm">Rafael Fischer</Text>
-                <Text color="gray.400" fontSize="xs">
-                    <Icon as={FaGithub} mr="2" />
-                    fischerafael
-                </Text>
+                <Text fontSize="md">{user.name || 'User'}</Text>
             </Box>
         </Flex>
     )

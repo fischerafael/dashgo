@@ -16,7 +16,7 @@
     "@types/node": "^16.7.1",
     "@types/react": "^17.0.19",
     "apexcharts": "^3.28.1",
-    "firebase": "^9.0.0",
+    "firebase": "^8.9.0",
     "framer-motion": "^4.1.17",
     "next": "11.1.0",
     "react": "17.0.2",
@@ -26,7 +26,6 @@
     "typescript": "^4.3.5"
   },
   "devDependencies": {
-    "@types/firebase": "^3.2.1",
     "eslint": "7.32.0",
     "eslint-config-next": "11.1.0"
   }

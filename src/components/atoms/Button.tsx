@@ -2,9 +2,9 @@ import { Button as ChakraButton, ButtonProps } from '@chakra-ui/react'
 
 interface Props extends ButtonProps {}
 
-export const Button = ({ children }: Props) => {
+export const Button = ({ children, ...props }: Props) => {
     return (
-        <ChakraButton type="submit" mt="4" colorScheme="blue" size="lg">
+        <ChakraButton mt="4" colorScheme="blue" size="lg" {...props}>
             {children}
         </ChakraButton>
     )
