@@ -1,4 +1,4 @@
-import { Flex } from '@chakra-ui/react'
+import { Flex, Grid } from '@chakra-ui/react'
 import { useAuth } from '../../../hooks/useAuth'
 import { Actions } from './components/Actions'
 import { Logo } from './components/Logo'
@@ -10,15 +10,21 @@ export const Header = () => {
 
     return (
         <Flex as="header" w="full" h="20" justify="center">
-            <Flex maxWidth={1024} w="full" align="center" h="full">
+            <Grid
+                maxWidth={1024}
+                w="full"
+                h="full"
+                templateColumns={['1fr 1fr', '1fr 1fr', '1fr 2fr 2fr']}
+                alignItems="center"
+            >
                 <Logo />
                 <Search />
 
-                <Flex flex="1" ml="4" justify="flex-end" w="full">
+                <Flex justify="flex-end" w="full">
                     <Profile user={user} />
                     <Actions />
                 </Flex>
-            </Flex>
+            </Grid>
         </Flex>
     )
 }

@@ -8,7 +8,7 @@ export const Logo = () => {
             cursor="pointer"
             fontSize="2xl"
             fontWeight="bold"
-            w="64"
+            w="full"
             letterSpacing="tight"
         >
             dashgit

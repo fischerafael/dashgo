@@ -1,5 +1,6 @@
 import Router from 'next/router'
 import { createContext, useContext, useState } from 'react'
+import { useEffect } from 'toasted-notes/node_modules/@types/react'
 import { database } from '../services'
 import { useAuth } from './useAuth'
 
@@ -37,6 +38,10 @@ export const WorkingDayProvider = ({ children }) => {
             console.log(e)
         }
     }
+
+    // useEffect(() => {
+    //     const workingDays = database.ref()
+    // }, [user])
 
     return (
         <WorkingDayContext.Provider
