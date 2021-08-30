@@ -9,9 +9,10 @@ import {
     Th,
     Thead,
     Tr,
+    useBreakpointValue,
     VStack
 } from '@chakra-ui/react'
-import NextLink from 'next/link'
+
 import { useRouter } from 'next/router'
 import { HiOutlinePlus, HiOutlineSearch } from 'react-icons/hi'
 import { Header } from '../components/organisms/Header'
@@ -21,6 +22,8 @@ import { TemplateApp } from '../components/templates/TemplateApp'
 
 export const WorkingDays = () => {
     const { push } = useRouter()
+
+    const isMedium = useBreakpointValue({ base: false, md: true })
 
     return (
         <TemplateApp
@@ -57,18 +60,25 @@ export const WorkingDays = () => {
                                 <Th>
                                     <Text fontSize="xs">Date</Text>
                                 </Th>
-                                <Th>
-                                    <Text fontSize="xs">Started at</Text>
-                                </Th>
-                                <Th>
-                                    <Text fontSize="xs">Ended at</Text>
-                                </Th>
-                                <Th>
-                                    <Text fontSize="xs">Lunch</Text>
-                                </Th>
-                                <Th>
-                                    <Text fontSize="xs">Hours</Text>
-                                </Th>
+                                {isMedium && (
+                                    <>
+                                        <Th>
+                                            <Text fontSize="xs">
+                                                Started at
+                                            </Text>
+                                        </Th>
+                                        <Th>
+                                            <Text fontSize="xs">Ended at</Text>
+                                        </Th>
+                                        <Th>
+                                            <Text fontSize="xs">Lunch</Text>
+                                        </Th>
+                                        <Th>
+                                            <Text fontSize="xs">Hours</Text>
+                                        </Th>
+                                    </>
+                                )}
+
                                 <Th>
                                     <Text fontSize="xs"></Text>
                                 </Th>
@@ -80,18 +90,23 @@ export const WorkingDays = () => {
                                 <Td>
                                     <Text fontSize="sm">29/08/2021</Text>
                                 </Td>
-                                <Td>
-                                    <Text fontSize="sm">10:00 am</Text>
-                                </Td>
-                                <Td>
-                                    <Text fontSize="sm">19:00 pm</Text>
-                                </Td>
-                                <Td>
-                                    <Text fontSize="sm">1</Text>
-                                </Td>
-                                <Td>
-                                    <Text fontSize="sm">8</Text>
-                                </Td>
+                                {isMedium && (
+                                    <>
+                                        <Td>
+                                            <Text fontSize="sm">10:00 am</Text>
+                                        </Td>
+                                        <Td>
+                                            <Text fontSize="sm">19:00 pm</Text>
+                                        </Td>
+                                        <Td>
+                                            <Text fontSize="sm">1</Text>
+                                        </Td>
+                                        <Td>
+                                            <Text fontSize="sm">8</Text>
+                                        </Td>
+                                    </>
+                                )}
+
                                 <Td>
                                     <Flex justify="flex-end">
                                         <Button
