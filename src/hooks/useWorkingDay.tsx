@@ -1,20 +1,14 @@
 import Router from 'next/router'
-import { createContext, useContext, useState } from 'react'
-import { useEffect } from 'toasted-notes/node_modules/@types/react'
+import { createContext, useContext, useState, useEffect } from 'react'
+import { IWorkingDay, IWorkingDays } from '../entities/IWorkingDay'
 import { database } from '../services'
 import { useAuth } from './useAuth'
-
-interface IWorkingDay {
-    day: string | undefined
-    startedAt: string | undefined
-    endedAt: string | undefined
-    lunchStartedAt: string | undefined
-    lunchEndedAt: string | undefined
-}
 
 interface WorkingDayContextProps {
     workingDay: IWorkingDay
     setWorkingDay: (data: IWorkingDay) => void
+
+    workingDays: IWorkingDays[]
 
     handleCreateWorkingDay: () => Promise<void>
 }
@@ -25,6 +19,9 @@ export const WorkingDayProvider = ({ children }) => {
     const { user } = useAuth()
 
     const [workingDay, setWorkingDay] = useState({} as IWorkingDay)
+    const [workingDays, setWorkingDays] = useState([] as IWorkingDays[])
+
+    console.log(workingDays)
 
     const handleCreateWorkingDay = async () => {
         try {
@@ -39,15 +36,37 @@ export const WorkingDayProvider = ({ children }) => {
         }
     }
 
-    // useEffect(() => {
-    //     const workingDays = database.ref()
-    // }, [user])
+    useEffect(() => {
+        const workingDays = database.ref('workingDay')
+
+        workingDays.on('value', (workingDay) => {
+            const response = workingDay.val()
+
+            if (!response || response === undefined) return
+
+            const workingDaysArray = Object.entries(response).map(
+                ([key, value]) => {
+                    return {
+                        id: key,
+                        value: value
+                    }
+                }
+            ) as IWorkingDays[]
+
+            setWorkingDays(workingDaysArray)
+        })
+
+        return () => {
+            workingDays.off('value')
+        }
+    }, [])
 
     return (
         <WorkingDayContext.Provider
             value={{
                 workingDay,
                 setWorkingDay,
+                workingDays,
                 handleCreateWorkingDay
             }}
         >
