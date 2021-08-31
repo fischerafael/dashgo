@@ -46,13 +46,6 @@ export const TableChakra = ({ workingDays }: Props) => {
 
             <Tbody>
                 {workingDays?.map((day) => {
-                    const {
-                        id,
-                        value: { startedAt, endedAt }
-                    } = day
-
-                    const lunchDuration =
-                        +day?.value?.lunchEndedAt - +day?.value?.lunchStartedAt
                     return (
                         <React.Fragment key={day?.id}>
                             <Tr _hover={{ bg: 'gray.900' }}>
@@ -71,7 +64,7 @@ export const TableChakra = ({ workingDays }: Props) => {
                                     </Text>
                                 </Td>
                                 <Td>
-                                    <Text fontSize="sm">{lunchDuration}</Text>
+                                    <Text fontSize="sm">fasdf</Text>
                                 </Td>
                                 <Td>
                                     <Text fontSize="sm">{day?.value?.day}</Text>
