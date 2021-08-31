@@ -1,7 +1,7 @@
-import { useContext, createContext, useState } from 'react'
 import Router from 'next/router'
-import { auth, firebase } from '../services'
+import { useContext, createContext, useState, useEffect } from 'react'
 import { IUser } from '../entities/IUser'
+import { signInService, auth } from '../services'
 
 interface AuthContextProps {
     isLoading: boolean
@@ -17,32 +17,30 @@ export const AuthProvider = ({ children }) => {
 
     const signInWithGoogle = async () => {
         setIsLoading(true)
-
         try {
-            const provider = new firebase.auth.GoogleAuthProvider()
-
-            const { user } = await auth.signInWithPopup(provider)
-
-            if (user) {
-                const { displayName, photoURL, uid } = user
-
-                if (!displayName || !photoURL)
-                    throw new Error('Missing name or photo')
-
-                setUser({
-                    id: uid,
-                    name: displayName,
-                    avatar: photoURL
-                })
-
-                Router.push('/app/working-days')
-            }
+            const { uid, displayName, photoURL } = await signInService()
+            setUser({
+                id: uid,
+                name: displayName,
+                avatar: photoURL
+            })
+            Router.push('/app/working-days')
         } catch (error) {
             console.log(error)
         } finally {
             setIsLoading(false)
         }
     }
+
+    useEffect(() => {
+        const unsubscribe = auth.onAuthStateChanged((user) => {
+            if (user) {
+                const { displayName, photoURL, uid } = user
+                setUser({ id: uid, name: displayName, avatar: photoURL })
+            }
+        })
+        return () => unsubscribe()
+    }, [])
 
     return (
         <AuthContext.Provider value={{ user, signInWithGoogle, isLoading }}>

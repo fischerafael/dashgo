@@ -19,4 +19,20 @@ if (!firebase.apps.length) {
 const auth = firebase.auth()
 const database = firebase.database()
 
-export { auth, database, firebase }
+const signInService = async () => {
+    try {
+        const provider = new firebase.auth.GoogleAuthProvider()
+
+        const { user } = await auth.signInWithPopup(provider)
+
+        if (user) {
+            const { displayName, photoURL, uid } = user
+
+            return { displayName, photoURL, uid }
+        }
+    } catch (error) {
+        throw new Error(error)
+    }
+}
+
+export { auth, database, signInService, firebase }
